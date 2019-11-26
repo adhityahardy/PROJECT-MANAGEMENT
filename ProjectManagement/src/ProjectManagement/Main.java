@@ -26,8 +26,8 @@ public class Main {
         
         //t1.viewTask();
         //t2.viewTask();
-        t1.changeStatus();
-        t1.viewTask();
+        //t1.changeStatus();
+        //t1.viewTask();
        
     }
 }
