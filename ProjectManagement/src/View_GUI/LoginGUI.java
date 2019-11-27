@@ -6,7 +6,9 @@
 package View_GUI;
 
 import java.awt.Color;
+import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -27,11 +29,11 @@ public class LoginGUI extends javax.swing.JFrame {
         initComponents();
         
         this.setLocationRelativeTo(null);
+        
               
         
     }
-
-    
+       
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -57,11 +59,11 @@ public class LoginGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 240, 240));
+        jPanel1.setBackground(new java.awt.Color(204, 0, 0));
 
-        jPanel2.setBackground(new java.awt.Color(0, 240, 240));
+        jPanel2.setBackground(new java.awt.Color(204, 0, 0));
 
-        jPanel6.setBackground(new java.awt.Color(0, 240, 240));
+        jPanel6.setBackground(new java.awt.Color(204, 0, 0));
 
         labelLogin.setBackground(new java.awt.Color(255, 255, 255));
         labelLogin.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -122,7 +124,7 @@ public class LoginGUI extends javax.swing.JFrame {
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
         );
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View_GUI/download.png")));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/download.png")));
 
         jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel5.setPreferredSize(new java.awt.Dimension(60, 60));
@@ -138,7 +140,7 @@ public class LoginGUI extends javax.swing.JFrame {
             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
         );
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View_GUI/password.jpg")));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/password.jpg")));
 
         tfUsername.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         tfUsername.setText("username");
@@ -228,39 +230,25 @@ public class LoginGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnLoginActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoginGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new LoginGUI().setVisible(true);
-            }
-        });
+    public String getUsernameLogin(){
+        return tfUsername.getText();
+    }
+    
+    public String getPasswordLogin(){
+        return jPasswordlogin.getText();
+    }
+    
+    public JButton getBtnLogin(){
+        return btnLogin;
+    }
+    
+    public void addActionListener(ActionListener al){
+        btnLogin.addActionListener(al);
+    }
+    
+    public void resetView(){
+        tfUsername.setText("");
+        jPasswordlogin.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

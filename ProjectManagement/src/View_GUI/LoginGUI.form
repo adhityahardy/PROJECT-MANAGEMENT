@@ -36,7 +36,7 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="f0" green="f0" red="0" type="rgb"/>
+          <Color blue="0" green="0" red="cc" type="rgb"/>
         </Property>
       </Properties>
 
@@ -66,7 +66,7 @@
         <Container class="javax.swing.JPanel" name="jPanel2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="f0" green="f0" red="0" type="rgb"/>
+              <Color blue="0" green="0" red="cc" type="rgb"/>
             </Property>
           </Properties>
 
@@ -94,7 +94,7 @@
             <Container class="javax.swing.JPanel" name="jPanel6">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="f0" green="f0" red="0" type="rgb"/>
+                  <Color blue="0" green="0" red="cc" type="rgb"/>
                 </Property>
               </Properties>
 
@@ -228,7 +228,7 @@
                     </Property>
                   </Properties>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/View_GUI/download.png&quot;)));"/>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Picture/download.png&quot;)));"/>
                   </AuxValues>
                 </Component>
               </SubComponents>
@@ -260,7 +260,7 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel2">
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/View_GUI/password.jpg&quot;)));"/>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Picture/password.jpg&quot;)));"/>
                   </AuxValues>
                 </Component>
               </SubComponents>
