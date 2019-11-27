@@ -11,14 +11,15 @@ import ProjectManagement.ManajerProyek;
 import ProjectManagement.Programmer;
 import ProjectManagement.Proyek;
 import ProjectManagement.Tugas;
+import View_GUI.ClientMenu;
 import View_GUI.LoginGUI;
 import View_GUI.MainMenu_GUI;
+import View_GUI.ManajerMenu;
+import View_GUI.ProgrammerMenu;
+import View_GUI.ProyekMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import javax.swing.JOptionPane;
 
 /**
@@ -29,6 +30,11 @@ public class Controller extends MouseAdapter implements ActionListener{
     
     LoginGUI viewlogin;
     MainMenu_GUI viewMenu= new MainMenu_GUI();
+    LoginGUI viewLogin = new LoginGUI();
+    ClientMenu ClientMenu = new ClientMenu();
+    ManajerMenu ManajerMenu = new ManajerMenu();
+    ProgrammerMenu ProgrammerMenu = new ProgrammerMenu();
+    ProyekMenu ProyekMenu = new ProyekMenu();
     
     public Controller(){
         viewlogin = new LoginGUI();

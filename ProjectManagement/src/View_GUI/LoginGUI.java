@@ -29,11 +29,10 @@ public class LoginGUI extends javax.swing.JFrame {
         initComponents();
         
         this.setLocationRelativeTo(null);
-        
-              
+                  
         
     }
-       
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -151,6 +150,7 @@ public class LoginGUI extends javax.swing.JFrame {
 
         btnLogin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnLogin.setText("Login");
+        btnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);

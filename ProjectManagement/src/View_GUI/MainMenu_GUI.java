@@ -5,21 +5,106 @@
  */
 package View_GUI;
 
+import java.awt.CardLayout;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JToggleButton;
+import javax.swing.SwingUtilities;
+
 /**
  *
  * @author user
  */
 public class MainMenu_GUI extends javax.swing.JFrame {
 
-        LoginGUI viewLogin = new LoginGUI();
-    /**
-     * Creates new form MainMenu_GUI
-     */
+    LoginGUI viewLogin = new LoginGUI();
+    ClientMenu ClientMenu = new ClientMenu();
+    ManajerMenu ManajerMenu = new ManajerMenu();
+    ProgrammerMenu ProgrammerMenu = new ProgrammerMenu();
+    ProyekMenu ProyekMenu = new ProyekMenu();
+    
+    CardLayout view;
+
     public MainMenu_GUI() {
         initComponents();
-        
+        setExtendedState(MAXIMIZED_BOTH);
         this.setLocationRelativeTo(null);
- 
+        view = (CardLayout) panelLayout.getLayout();
+//        view = (CardLayout) jPanel1.getLayout();
+
+    }
+
+    public LoginGUI getViewLogin() {
+        return viewLogin;
+    }
+
+    public void setViewLogin(LoginGUI viewLogin) {
+        this.viewLogin = viewLogin;
+    }
+
+    public JToggleButton getBtnClient() {
+        return btnClient;
+    }
+
+    public void setBtnClient(JToggleButton btnClient) {
+        this.btnClient = btnClient;
+    }
+
+    public JToggleButton getBtnManajer() {
+        return btnManajer;
+    }
+
+    public void setBtnManajer(JToggleButton btnManajer) {
+        this.btnManajer = btnManajer;
+    }
+
+    public JToggleButton getBtnProgrammer() {
+        return btnProgrammer;
+    }
+
+    public void setBtnProgrammer(JToggleButton btnProgrammer) {
+        this.btnProgrammer = btnProgrammer;
+    }
+
+    public JToggleButton getBtnProyek() {
+        return btnProyek;
+    }
+
+    public void setBtnProyek(JToggleButton btnProyek) {
+        this.btnProyek = btnProyek;
+    }
+
+    public JButton getBtnlogout() {
+        return btnlogout;
+    }
+
+    public void setBtnlogout(JButton btnlogout) {
+        this.btnlogout = btnlogout;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JPanel getjPanel7() {
+        return jPanel7;
+    }
+
+    public void setjPanel7(JPanel jPanel7) {
+        this.jPanel7 = jPanel7;
     }
 
     /**
@@ -32,20 +117,22 @@ public class MainMenu_GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        ClientMenu_view = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
+        btnClient = new javax.swing.JToggleButton();
+        btnManajer = new javax.swing.JToggleButton();
+        btnProgrammer = new javax.swing.JToggleButton();
+        btnProyek = new javax.swing.JToggleButton();
+        btnlogout = new javax.swing.JButton();
+        panelLayout = new javax.swing.JPanel();
 
         jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 0, 0));
 
-        jPanel1.setBackground(new java.awt.Color(204, 0, 0));
+        ClientMenu_view.setBackground(new java.awt.Color(204, 0, 0));
 
         jPanel7.setBackground(new java.awt.Color(204, 204, 204));
         jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -53,52 +140,60 @@ public class MainMenu_GUI extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setText("Welcome !");
 
-        jToggleButton1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/client.png"))); // NOI18N
-        jToggleButton1.setText("Client");
-        jToggleButton1.setActionCommand("Client");
-        jToggleButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton1.setPreferredSize(new java.awt.Dimension(100, 30));
-        jToggleButton1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jToggleButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnClient.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        btnClient.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/client.png"))); // NOI18N
+        btnClient.setText("Client");
+        btnClient.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnClient.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnClient.setPreferredSize(new java.awt.Dimension(100, 30));
+        btnClient.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btnClient.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnClient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                btnClientActionPerformed(evt);
             }
         });
 
-        jToggleButton2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/manajer.png"))); // NOI18N
-        jToggleButton2.setText("Manajer");
-        jToggleButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton2.setPreferredSize(new java.awt.Dimension(100, 30));
-        jToggleButton2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jToggleButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnManajer.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        btnManajer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/manajer.png"))); // NOI18N
+        btnManajer.setText("Manajer");
+        btnManajer.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnManajer.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnManajer.setPreferredSize(new java.awt.Dimension(100, 30));
+        btnManajer.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btnManajer.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnManajer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                btnManajerActionPerformed(evt);
             }
         });
 
-        jToggleButton3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/programmer.png"))); // NOI18N
-        jToggleButton3.setText("Programmer");
-        jToggleButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton3.setPreferredSize(new java.awt.Dimension(100, 30));
-        jToggleButton3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jToggleButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        jToggleButton4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jToggleButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/proyek.png"))); // NOI18N
-        jToggleButton4.setText("Proyek");
-        jToggleButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton4.setPreferredSize(new java.awt.Dimension(100, 30));
-        jToggleButton4.setVerifyInputWhenFocusTarget(false);
-        jToggleButton4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jToggleButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnProgrammer.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        btnProgrammer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/programmer.png"))); // NOI18N
+        btnProgrammer.setText("Programmer");
+        btnProgrammer.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnProgrammer.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnProgrammer.setPreferredSize(new java.awt.Dimension(100, 30));
+        btnProgrammer.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btnProgrammer.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnProgrammer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton4ActionPerformed(evt);
+                btnProgrammerActionPerformed(evt);
+            }
+        });
+
+        btnProyek.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        btnProyek.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/proyek.png"))); // NOI18N
+        btnProyek.setText("Proyek");
+        btnProyek.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnProyek.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnProyek.setPreferredSize(new java.awt.Dimension(100, 30));
+        btnProyek.setVerifyInputWhenFocusTarget(false);
+        btnProyek.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btnProyek.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnProyek.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProyekActionPerformed(evt);
             }
         });
 
@@ -109,45 +204,66 @@ public class MainMenu_GUI extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jToggleButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jToggleButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnProyek, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnProgrammer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnManajer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnClient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(143, Short.MAX_VALUE)
+                .addContainerGap(141, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(140, 140, 140))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(78, Short.MAX_VALUE)
                 .addComponent(jLabel1)
+                .addGap(72, 72, 72)
+                .addComponent(btnClient, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnManajer, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnProgrammer, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
+                .addComponent(btnProyek, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        btnlogout.setText("Logout");
+        btnlogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnlogoutActionPerformed(evt);
+            }
+        });
+
+        panelLayout.setBackground(new java.awt.Color(204, 0, 0));
+        panelLayout.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        panelLayout.setLayout(new java.awt.CardLayout());
+
+        javax.swing.GroupLayout ClientMenu_viewLayout = new javax.swing.GroupLayout(ClientMenu_view);
+        ClientMenu_view.setLayout(ClientMenu_viewLayout);
+        ClientMenu_viewLayout.setHorizontalGroup(
+            ClientMenu_viewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ClientMenu_viewLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(687, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelLayout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnlogout)
+                .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        ClientMenu_viewLayout.setVerticalGroup(
+            ClientMenu_viewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ClientMenu_viewLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(ClientMenu_viewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(panelLayout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(ClientMenu_viewLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnlogout))
+                    .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -155,73 +271,64 @@ public class MainMenu_GUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(ClientMenu_view, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ClientMenu_view, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton4ActionPerformed
+    private void btnProyekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProyekActionPerformed
+        panelLayout.add(ProyekMenu, "Proyek");
+        view.show(panelLayout, "Proyek");
+        SwingUtilities.updateComponentTreeUI(this);
+        this.repaint();   
+    }//GEN-LAST:event_btnProyekActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    private void btnManajerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManajerActionPerformed
+        panelLayout.add(ManajerMenu, "Manajer");
+        view.show(panelLayout, "Manajer");
+        SwingUtilities.updateComponentTreeUI(this);
+        this.repaint();        
+    }//GEN-LAST:event_btnManajerActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    private void btnClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientActionPerformed
+        panelLayout.add(ClientMenu, "Client");
+        view.show(panelLayout, "Client");
+        SwingUtilities.updateComponentTreeUI(this);
+        this.repaint();
+    }//GEN-LAST:event_btnClientActionPerformed
+
+    private void btnlogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlogoutActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_btnlogoutActionPerformed
+
+    private void btnProgrammerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProgrammerActionPerformed
+        panelLayout.add(ProgrammerMenu, "Programmer");
+        view.show(panelLayout, "Programmer");
+        SwingUtilities.updateComponentTreeUI(this);
+        this.repaint();   
+    }//GEN-LAST:event_btnProgrammerActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainMenu_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainMenu_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainMenu_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainMenu_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainMenu_GUI().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel ClientMenu_view;
+    private javax.swing.JToggleButton btnClient;
+    private javax.swing.JToggleButton btnManajer;
+    private javax.swing.JToggleButton btnProgrammer;
+    private javax.swing.JToggleButton btnProyek;
+    private javax.swing.JButton btnlogout;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
+    private javax.swing.JPanel panelLayout;
     // End of variables declaration//GEN-END:variables
 }
